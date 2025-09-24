@@ -1,0 +1,763 @@
+{
+  "info": {
+    "_postman_id": "e841653b-b4e7-469f-8002-2e6ffd1c602c",
+    "name": "Forum",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "583447"
+  },
+  "item": [
+    {
+      "name": "Add Post",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"title\": \"JavaEE\",\n\t\"content\": \"Java is the best for backend\",\n\t\"tags\":[\"Java\", \"Spring\", \"backend\", \"JEE\"]\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/forum/post/{{user}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "forum",
+            "post",
+            "{{user}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Add Post",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"title\": \"JavaEE\",\n\t\"content\": \"Java is the best for backend\",\n\t\"tags\":[\"Java\", \"Spring\", \"backend\", \"JEE\"]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/forum/post/{{user}}",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "post",
+                "{{user}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Dec 2021 09:39:06 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"61b86639905cb348d52a138d\",\n    \"title\": \"JavaEE\",\n    \"content\": \"Java is the best for backend\",\n    \"author\": \"JavaFan\",\n    \"dateCreated\": \"2021-12-14T11:39:05\",\n    \"tags\": [\n        \"Java\",\n        \"backend\",\n        \"JEE\",\n        \"Spring\"\n    ],\n    \"likes\": 0,\n    \"comments\": []\n}"
+        }
+      ]
+    },
+    {
+      "name": "Find post by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/forum/post/{{postId}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "forum",
+            "post",
+            "{{postId}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Find post by id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/forum/post/{{postId}}",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "post",
+                "{{postId}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Tue, 14 Dec 2021 09:40:06 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"61b86639905cb348d52a138d\",\n    \"title\": \"JavaEE\",\n    \"content\": \"Java is the best for backend\",\n    \"author\": \"JavaFan\",\n    \"dateCreated\": \"2021-12-14T11:39:05\",\n    \"tags\": [\n        \"Java\",\n        \"backend\",\n        \"JEE\",\n        \"Spring\"\n    ],\n    \"likes\": 0,\n    \"comments\": []\n}"
+        }
+      ]
+    },
+    {
+      "name": "Add like",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/forum/post/{{postId}}/like",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "forum",
+            "post",
+            "{{postId}}",
+            "like"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Add like",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/forum/post/{{postId}}/like",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "post",
+                "{{postId}}",
+                "like"
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": "plain",
+          "header": [
+            {
+              "key": "Content-Length",
+              "value": "0"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 12:12:31 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": ""
+        }
+      ]
+    },
+    {
+      "name": "Find posts by author",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/forum/posts/author/{{user}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "forum",
+            "posts",
+            "author",
+            "{{user}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Find posts by author",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/forum/posts/author/{{user}}",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "posts",
+                "author",
+                "{{user}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 12:11:13 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"61b9c48c041dde2dee7b98d3\",\n        \"title\": \"Jakarta EE\",\n        \"content\": \"Java is the best for backend\",\n        \"author\": \"JavaFan\",\n        \"dateCreated\": \"2021-12-15T12:33:48\",\n        \"tags\": [\n            \"Java\",\n            \"Jakarta EE\",\n            \"backend\",\n            \"J2EE\",\n            \"JEE\",\n            \"Spring\"\n        ],\n        \"likes\": 0,\n        \"comments\": []\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Add comment",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"message\": \"Awesome!!!\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/forum/post/{{postId}}/comment/{{user}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "forum",
+            "post",
+            "{{postId}}",
+            "comment",
+            "{{user}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Add comment",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"message\": \"Awesome!!!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/forum/post/{{postId}}/comment/{{user}}",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "post",
+                "{{postId}}",
+                "comment",
+                "{{user}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 12:11:56 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"61b9c48c041dde2dee7b98d3\",\n    \"title\": \"Jakarta EE\",\n    \"content\": \"Java is the best for backend\",\n    \"author\": \"JavaFan\",\n    \"dateCreated\": \"2021-12-15T12:33:48\",\n    \"tags\": [\n        \"Java\",\n        \"Jakarta EE\",\n        \"backend\",\n        \"J2EE\",\n        \"JEE\",\n        \"Spring\"\n    ],\n    \"likes\": 0,\n    \"comments\": [\n        {\n            \"user\": \"Stranger\",\n            \"message\": \"Awesome!!!\",\n            \"dateCreated\": \"2021-12-15T14:11:55\",\n            \"likes\": 0\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete post",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/forum/post/{{postId}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "forum",
+            "post",
+            "{{postId}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Delete post",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/forum/post/{{postId}}",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "post",
+                "{{postId}}"
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 10:32:45 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"timestamp\": \"2021-12-15T10:32:45.778+00:00\",\n    \"status\": 404,\n    \"error\": \"Not Found\",\n    \"message\": \"Post with id = 5f44d3aad077712b24eae0e9 not found\",\n    \"path\": \"/forum/post/5f44d3aad077712b24eae0e9\"\n}"
+        },
+        {
+          "name": "Delete post",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/forum/post/{{postId}}",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "post",
+                "{{postId}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 10:33:09 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"61b9b9b9435e0446541ca70f\",\n    \"title\": \"JavaEE\",\n    \"content\": \"Java is the best for backend\",\n    \"author\": \"JavaFan\",\n    \"dateCreated\": \"2021-12-15T11:47:37\",\n    \"tags\": [\n        \"Java\",\n        \"backend\",\n        \"JEE\",\n        \"Spring\"\n    ],\n    \"likes\": 0,\n    \"comments\": []\n}"
+        }
+      ]
+    },
+    {
+      "name": "Find posts by tags",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\"Python\", \"Java\"]",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/forum/posts/tags",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "forum",
+            "posts",
+            "tags"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Find posts by tags",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "[\"Python\", \"Java\"]",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/forum/posts/tags",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "posts",
+                "tags"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 21:18:40 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"61b9c48c041dde2dee7b98d3\",\n        \"title\": \"Jakarta EE\",\n        \"content\": \"Java is the best for backend\",\n        \"author\": \"JavaFan\",\n        \"dateCreated\": \"2021-12-15T12:33:48\",\n        \"tags\": [\n            \"Java\",\n            \"Jakarta EE\",\n            \"backend\",\n            \"J2EE\",\n            \"JEE\",\n            \"Spring\"\n        ],\n        \"likes\": 2,\n        \"comments\": [\n            {\n                \"user\": \"Stranger\",\n                \"message\": \"Awesome!!!\",\n                \"dateCreated\": \"2021-12-15T14:11:55\",\n                \"likes\": 0\n            }\n        ]\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Find posts by period",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"dateFrom\": \"2020-08-25\",\n    \"dateTo\": \"2020-08-26\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/forum/posts/period",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "forum",
+            "posts",
+            "period"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Find posts by period",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"dateFrom\": \"2021-08-25\",\n    \"dateTo\": \"2021-12-26\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/forum/posts/period",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "posts",
+                "period"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 21:19:21 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"61b9c48c041dde2dee7b98d3\",\n        \"title\": \"Jakarta EE\",\n        \"content\": \"Java is the best for backend\",\n        \"author\": \"JavaFan\",\n        \"dateCreated\": \"2021-12-15T12:33:48\",\n        \"tags\": [\n            \"Java\",\n            \"Jakarta EE\",\n            \"backend\",\n            \"J2EE\",\n            \"JEE\",\n            \"Spring\"\n        ],\n        \"likes\": 2,\n        \"comments\": [\n            {\n                \"user\": \"Stranger\",\n                \"message\": \"Awesome!!!\",\n                \"dateCreated\": \"2021-12-15T14:11:55\",\n                \"likes\": 0\n            }\n        ]\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Update post",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"title\": \"Jakarta EE\",\n    \"tags\":[\"Jakarta EE\", \"J2EE\"],\n    \"content\": \"Java is the best for backend\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "localhost:8080/forum/post/{{postId}}",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "forum",
+            "post",
+            "{{postId}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Update post",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"title\": \"Jakarta EE\",\n    \"tags\":[\"Jakarta EE\", \"J2EE\"],\n    \"content\": \"Java is the best for backend\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/forum/post/{{postId}}",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "post",
+                "{{postId}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 10:36:42 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"61b9c48c041dde2dee7b98d3\",\n    \"title\": \"Jakarta EE\",\n    \"content\": \"Java is the best for backend\",\n    \"author\": \"JavaFan\",\n    \"dateCreated\": \"2021-12-15T12:33:48\",\n    \"tags\": [\n        \"Java\",\n        \"Jakarta EE\",\n        \"backend\",\n        \"J2EE\",\n        \"JEE\",\n        \"Spring\"\n    ],\n    \"likes\": 0,\n    \"comments\": []\n}"
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "user",
+      "value": "JavaFan"
+    },
+    {
+      "key": "postId",
+      "value": "61f07ac33ab027374829b481"
+    }
+  ]
+}
