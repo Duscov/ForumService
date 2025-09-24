@@ -26,7 +26,7 @@ public class Post {
     String author;
     LocalDateTime dateCreated = LocalDateTime.now();
     Set<String> tags = new HashSet<String>();
-    Integer likes;
+    Integer likes = 0;
     List<Comment> comments = new ArrayList<Comment>();
 
     public Post(String title, String content, String author, Set<String> tags) {
@@ -48,7 +48,7 @@ public class Post {
         return tags.remove(tag);
     }
 
-    public boolean addComment (Comment comment) {
+    public boolean addComment(Comment comment) {
         return comments.add(comment);
     }
 

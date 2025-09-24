@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 @Getter
 @NoArgsConstructor
-@EqualsAndHashCode(of = {"user", "dateCreated"})
+@EqualsAndHashCode(of = { "user", "dateCreated"})
 public class Comment {
     @Setter
     String user;

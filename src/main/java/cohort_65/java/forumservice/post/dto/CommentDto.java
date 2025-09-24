@@ -14,5 +14,4 @@ public class CommentDto {
     String message;
     Integer likes;
     LocalDateTime dateCreated;
-
 }

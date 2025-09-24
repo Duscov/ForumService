@@ -1,10 +1,6 @@
 package cohort_65.java.forumservice.post.dto;
 
-import cohort_65.java.forumservice.post.model.Comment;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Singular;
+import lombok.*;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -13,6 +9,7 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class PostDto {
     String id;
     String title;
