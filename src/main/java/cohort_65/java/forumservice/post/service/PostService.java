@@ -1,29 +1,29 @@
 package cohort_65.java.forumservice.post.service;
 
+import cohort_65.java.forumservice.post.dto.DatePeriodDto;
+import cohort_65.java.forumservice.post.dto.NewCommentDto;
 import cohort_65.java.forumservice.post.dto.NewPostDto;
 import cohort_65.java.forumservice.post.dto.PostDto;
 
-import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Set;
 
 public interface PostService {
 
     PostDto addNewPost(NewPostDto newPostDto, String author);
 
-    PostDto findPostById(String id);
+    PostDto getPostById(String id);
 
-    void addLike(String id);
+    void likePost(String id);
 
-    List<PostDto> findPostsByAuthor(String author);
+    PostDto deletePostById(String id);
 
-    void addComment(String postId, String user, String message);
+    PostDto updatePostById(NewPostDto newPostDto, String id);
 
-    void deletePost(String id);
+    PostDto addComment(String id, String user, NewCommentDto newCommentDto);
 
-    List<PostDto> findPostsByTags(Set<String> tags);
+    Iterable<PostDto> getPostsByAuthor(String author);
 
-    List<PostDto> findPostsByPeriod(LocalDateTime from, LocalDateTime to);
+    Iterable<PostDto> getPostsByTags(Set<String> tags);
 
-    PostDto updatePost(String id, NewPostDto newPostDto);
+    Iterable<PostDto> getPostsByPeriod(DatePeriodDto datePeriodDto);
 }
