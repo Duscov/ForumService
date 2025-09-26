@@ -1,5 +1,6 @@
 package cohort_65.java.forumservice.post.dto;
 
+import cohort_65.java.forumservice.post.model.Comment;
 import lombok.*;
 
 import java.time.LocalDateTime;

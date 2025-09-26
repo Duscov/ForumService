@@ -1,0 +1,16 @@
+services:
+  forum-service:
+    image: forum-service:0.0.1-Andy
+    container_name: forum-service
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://mongo:27017/forum-service
+
+  mongo:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - "27017:27017"
