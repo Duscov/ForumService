@@ -8,7 +8,6 @@ import cohort_65.java.forumservice.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Set;
 
 @RestController
@@ -29,12 +28,6 @@ public class PostController {
         return postService.getPostById(id);
     }
 
-//    @PutMapping("/post/{id}/like")
-//    public ResponseEntity<Void> likePost(@PathVariable String id) {
-//        postService.likePost(id);
-//        return ResponseEntity.noContent()
-//                .build();
-//    }
 
     @PutMapping("/post/{id}/like")
     @ResponseStatus(HttpStatus.NO_CONTENT)
