@@ -17,6 +17,7 @@ import java.util.Set;
 @EqualsAndHashCode(of = {"id"})
 @NoArgsConstructor
 public class Post {
+    @Setter
     String id;
     @Setter
     String title;
@@ -24,6 +25,7 @@ public class Post {
     String content;
     @Setter
     String author;
+    @Setter
     LocalDateTime dateCreated = LocalDateTime.now();
     Set<String> tags = new HashSet<String>();
     Integer likes = 0;

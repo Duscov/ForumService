@@ -14,4 +14,6 @@ public interface PostRepository extends MongoRepository<Post, String> {
     Iterable<Post> findAllByTagsIgnoreCaseIn(Set<String> tags);
 
     Iterable<Post> findAllByDateCreatedBetween(LocalDate dateCreated, LocalDate dateCreated2);
+
+    Iterable<Post> findAllByTitleIgnoreCase(String title);
 }

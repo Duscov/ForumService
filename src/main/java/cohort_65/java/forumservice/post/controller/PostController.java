@@ -5,6 +5,7 @@ import cohort_65.java.forumservice.post.dto.NewCommentDto;
 import cohort_65.java.forumservice.post.dto.NewPostDto;
 import cohort_65.java.forumservice.post.dto.PostDto;
 import cohort_65.java.forumservice.post.service.PostService;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -64,5 +65,10 @@ public class PostController {
     @PostMapping("/posts/period")
     public Iterable<PostDto> getPostsByPeriod(@RequestBody DatePeriodDto datePeriodDto) {
         return postService.getPostsByPeriod(datePeriodDto);
+    }
+
+    @GetMapping("/post/title/{title}")
+    public Iterable<PostDto> getPostByTitle(@PathVariable String title) {
+        return postService.getPostByTitle(title);
     }
 }

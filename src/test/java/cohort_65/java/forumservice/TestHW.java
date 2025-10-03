@@ -15,7 +15,6 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
@@ -25,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @WebMvcTest(PostController.class)   //тестируешь только слой контроллера, изолируя его от других компонентов
 @Import(PostServiceMockConfig.class)
-class PostControllerTest {
+class TestHW {
 
     @Autowired
     private MockMvc mockMvc;  //имитирует HTTP-запросы к контроллеру.
