@@ -7,6 +7,8 @@ import cohort_65.java.forumservice.accounting.service.UserAccountService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.security.Principal;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/account")
@@ -45,5 +47,10 @@ public class UserAccountController {
     public UserDto removeRoleForUser(@PathVariable String login,
                                      @PathVariable String role) {
         return userAccountService.changeRoleForUser(login, role,false);
+    }
+
+    @PostMapping("/login")
+    public UserDto login(Principal principal) {
+        return userAccountService.getUserByLogin(principal.getName());
     }
 }

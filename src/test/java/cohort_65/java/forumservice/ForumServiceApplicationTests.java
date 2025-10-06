@@ -5,4 +5,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ForumServiceApplicationTests {
+    @Test
+    void contextLoads() {
+    }
 }

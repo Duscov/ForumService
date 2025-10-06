@@ -9,6 +9,7 @@ import cohort_65.java.forumservice.accounting.dto.exception.UserNotFoundExceptio
 import cohort_65.java.forumservice.accounting.model.UserAccount;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,6 +18,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 
     final UserAccountRepository userAccountRepository;
     final ModelMapper modelMapper;
+    final PasswordEncoder passwordEncoder;
 
     @Override
     public UserDto register(UserRegisterDto userRegisterDto) {
@@ -24,6 +26,10 @@ public class UserAccountServiceImpl implements UserAccountService {
             throw new UserExistsException();
         }
         UserAccount userAccount = modelMapper.map(userRegisterDto, UserAccount.class);
+
+        String password = passwordEncoder.encode(userAccount.getPassword());
+        userAccount.setPassword(password);
+
         userAccount = userAccountRepository.save(userAccount);
         return modelMapper.map(userAccount, UserDto.class);
     }
