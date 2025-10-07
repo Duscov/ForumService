@@ -1,4 +1,4 @@
-package cohort_65.java.forumservice.security;
+package cohort_65.java.forumservice.security.service;
 
 import cohort_65.java.forumservice.accounting.dao.UserAccountRepository;
 import cohort_65.java.forumservice.accounting.dto.exception.UserNotFoundException;

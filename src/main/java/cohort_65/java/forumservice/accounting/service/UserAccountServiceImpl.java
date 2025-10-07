@@ -71,4 +71,13 @@ public class UserAccountServiceImpl implements UserAccountService {
         if (res) userAccount = userAccountRepository.save(userAccount);
         return modelMapper.map(userAccount, UserDto.class);
     }
+
+    @Override
+    public void changePassword(String name, String newPassword) {
+        UserAccount userAccount = userAccountRepository.findById(name)
+                .orElseThrow(UserNotFoundException::new);
+        String password = passwordEncoder.encode(newPassword);
+        userAccount.setPassword(password);
+        userAccountRepository.save(userAccount);
+    }
 }
