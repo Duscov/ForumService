@@ -2,6 +2,8 @@ package cohort_65.java.forumservice.security.service;
 
 import cohort_65.java.forumservice.security.dto.LoginRequestDto;
 import cohort_65.java.forumservice.security.dto.TokenResponseDto;
+import io.jsonwebtoken.Claims;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,8 +26,25 @@ public class AuthService {
         if (passwordEncoder.matches(loginRequestDto.getPassword(), userDetails.getPassword())) {
             String accessToken = tokenService.generateAccessToken(username);
             String refreshToken = tokenService.generateRefreshToken(username);
-            refreshStorage.put(refreshToken, username);
+            refreshStorage.put(username, refreshToken);
             return new TokenResponseDto(accessToken, refreshToken);
+        }
+        return null;
+    }
+
+    public TokenResponseDto getNewTokens(HttpServletRequest request) {
+        String refreshToken = tokenService.getTokenFromRequest(request, "Refresh-Token");
+
+        if (tokenService.validateRefreshToken(refreshToken)) {
+            Claims claims = tokenService.getRefreshTokenClaims(refreshToken);
+            String username = claims.getSubject();
+            String savedRefreshToken = refreshStorage.get(username);
+            if (savedRefreshToken != null && savedRefreshToken.equals(refreshToken)) {
+                String accessToken = tokenService.generateAccessToken(username);
+                String newRefreshToken = tokenService.generateRefreshToken(username);
+                refreshStorage.put(username, newRefreshToken);
+                return new TokenResponseDto(accessToken, newRefreshToken);
+            }
         }
         return null;
     }
