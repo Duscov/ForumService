@@ -28,7 +28,7 @@ public class MetricsAspect {
         return result;
     }
 
-    @Before("execution(* cohort_65.java.forumservice.accounting.service.UserAccountServiceImpl.register(..))")
+ /*   @Before("execution(* cohort_65.java.forumservice.accounting.service.UserAccountServiceImpl.register(..))")
     public void validateArgsForRegister(JoinPoint joinPoint) {
         Object[] args = joinPoint.getArgs();
         UserRegisterDto userRegisterDto = (UserRegisterDto) args[0];
@@ -39,6 +39,6 @@ public class MetricsAspect {
             throw new IllegalArgumentException("Password must not contain '!' character");
         }
         System.out.println("[VALIDATION] Passed validation for register");
-    }
+    }*/
 
 }

@@ -23,7 +23,7 @@ public class UserAccountServiceImpl implements UserAccountService {
     @Override
     public UserDto register(UserRegisterDto userRegisterDto) {
         if (userAccountRepository.existsById(userRegisterDto.getLogin())) {
-            throw new UserExistsException();
+            throw new UserExistsException(userRegisterDto.getLogin());
         }
         UserAccount userAccount = modelMapper.map(userRegisterDto, UserAccount.class);
 

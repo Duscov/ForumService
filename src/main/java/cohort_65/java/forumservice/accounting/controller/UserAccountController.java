@@ -4,6 +4,7 @@ import cohort_65.java.forumservice.accounting.dto.UserDto;
 import cohort_65.java.forumservice.accounting.dto.UserRegisterDto;
 import cohort_65.java.forumservice.accounting.dto.UserUpdateDto;
 import cohort_65.java.forumservice.accounting.service.UserAccountService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ public class UserAccountController {
     final UserAccountService userAccountService;
 
     @PostMapping("/register")
-    public UserDto register(@RequestBody UserRegisterDto userRegisterDto) {
+    public UserDto register(@Valid @RequestBody UserRegisterDto userRegisterDto) {
         return userAccountService.register(userRegisterDto);
     }
 
