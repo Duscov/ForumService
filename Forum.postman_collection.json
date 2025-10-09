@@ -1,11 +1,571 @@
 {
   "info": {
-    "_postman_id": "e841653b-b4e7-469f-8002-2e6ffd1c602c",
+    "_postman_id": "1426a998-89ec-453c-af92-185ea5ba5697",
     "name": "Forum",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "583447"
+    "_exporter_id": "25164098"
   },
   "item": [
+    {
+      "name": "account",
+      "item": [
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"login\":\"john@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/account/register",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "account",
+                "register"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Register",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"login\":\"john@gmail.com\",\r\n    \"password\": \"1234\",\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL}}/account/register",
+                  "host": [
+                    "{{URL}}"
+                  ],
+                  "path": [
+                    "account",
+                    "register"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 26 Sep 2025 08:18:29 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"login\": \"john@gmail.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"roles\": [\n        \"USER\"\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Remove User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/account/user/{{login}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "account",
+                "user",
+                "{{login}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Remove User",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{URL}}/account/user/{{login}}",
+                  "host": [
+                    "{{URL}}"
+                  ],
+                  "path": [
+                    "account",
+                    "user",
+                    "{{login}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Disposition",
+                  "value": "inline;filename=f.txt"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 26 Sep 2025 08:46:58 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"login\": \"john+11@gmail.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"roles\": [\n        \"USER\"\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get User",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/account/user/{{login}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "account",
+                "user",
+                "{{login}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Get User",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{URL}}/account/user/{{login}}",
+                  "host": [
+                    "{{URL}}"
+                  ],
+                  "path": [
+                    "account",
+                    "user",
+                    "{{login}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Disposition",
+                  "value": "inline;filename=f.txt"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 26 Sep 2025 08:25:24 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"login\": \"john1@gmail.com\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"roles\": [\n        \"USER\"\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Smith\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/account/user/{{login}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "account",
+                "user",
+                "{{login}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Update User",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"firstName\": \"Johny\",\r\n    \"lastName\": \"Peterson\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{URL}}/account/user/{{login}}",
+                  "host": [
+                    "{{URL}}"
+                  ],
+                  "path": [
+                    "account",
+                    "user",
+                    "{{login}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Disposition",
+                  "value": "inline;filename=f.txt"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 26 Sep 2025 08:50:31 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"login\": \"john+11@gmail.com\",\n    \"firstName\": \"Johny\",\n    \"lastName\": \"Peterson\",\n    \"roles\": [\n        \"USER\"\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Add Role",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/account/user/{{login}}/role/{{role}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "account",
+                "user",
+                "{{login}}",
+                "role",
+                "{{role}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Add Role",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "url": {
+                  "raw": "{{URL}}/account/user/{{login}}/role/{{role}}",
+                  "host": [
+                    "{{URL}}"
+                  ],
+                  "path": [
+                    "account",
+                    "user",
+                    "{{login}}",
+                    "role",
+                    "{{role}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 26 Sep 2025 08:58:47 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"login\": \"john+11@gmail.com\",\n    \"firstName\": \"Johny\",\n    \"lastName\": \"Peterson\",\n    \"roles\": [\n        \"USER\",\n        \"MODER\"\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Remove Role",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{URL}}/account/user/{{login}}/role/{{role}}",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "account",
+                "user",
+                "{{login}}",
+                "role",
+                "{{role}}"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Remove Role",
+              "originalRequest": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{URL}}/account/user/{{login}}/role/{{role}}",
+                  "host": [
+                    "{{URL}}"
+                  ],
+                  "path": [
+                    "account",
+                    "user",
+                    "{{login}}",
+                    "role",
+                    "{{role}}"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Fri, 26 Sep 2025 08:58:51 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"login\": \"john+11@gmail.com\",\n    \"firstName\": \"Johny\",\n    \"lastName\": \"Peterson\",\n    \"roles\": [\n        \"USER\"\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/account/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "account",
+                "login"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "New Request",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Authorization",
+                    "value": "Basic QW5keToxMjM0",
+                    "type": "text"
+                  }
+                ],
+                "url": {
+                  "raw": "http://localhost:8080/account/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "account",
+                    "login"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 06 Oct 2025 09:03:48 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"login\": \"Andy\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Smith\",\n    \"roles\": [\n        \"USER\"\n    ]\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JWT-Cookies",
+      "item": [
+        {
+          "name": "JWT-Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\":\"Andy1\",\n    \"password\": \"12345\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{URL}}/auth/login",
+              "host": [
+                "{{URL}}"
+              ],
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
     {
       "name": "Add Post",
       "request": {
@@ -13,7 +573,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n\t\"title\": \"JavaEE\",\n\t\"content\": \"Java is the best for backend\",\n\t\"tags\":[\"Java\", \"Spring\", \"backend\", \"JEE\"]\n}",
+          "raw": "{\n\t\"title\": \"Java\",\n\t\"content\": \"Java is the best for backend\",\n\t\"tags\":[\"Java\", \"Spring\", \"backend\", \"JEE\"]\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -21,11 +581,10 @@
           }
         },
         "url": {
-          "raw": "localhost:8080/forum/post/{{user}}",
+          "raw": "{{URL}}/forum/post/{{user}}",
           "host": [
-            "localhost"
+            "{{URL}}"
           ],
-          "port": "8080",
           "path": [
             "forum",
             "post",
@@ -97,11 +656,10 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "localhost:8080/forum/post/{{postId}}",
+          "raw": "{{URL}}/forum/post/{{postId}}",
           "host": [
-            "localhost"
+            "{{URL}}"
           ],
-          "port": "8080",
           "path": [
             "forum",
             "post",
@@ -159,147 +717,13 @@
       ]
     },
     {
-      "name": "Add like",
-      "request": {
-        "method": "PUT",
-        "header": [],
-        "url": {
-          "raw": "localhost:8080/forum/post/{{postId}}/like",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "forum",
-            "post",
-            "{{postId}}",
-            "like"
-          ]
-        }
-      },
-      "response": [
-        {
-          "name": "Add like",
-          "originalRequest": {
-            "method": "PUT",
-            "header": [],
-            "url": {
-              "raw": "localhost:8080/forum/post/{{postId}}/like",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "forum",
-                "post",
-                "{{postId}}",
-                "like"
-              ]
-            }
-          },
-          "status": "No Content",
-          "code": 204,
-          "_postman_previewlanguage": "plain",
-          "header": [
-            {
-              "key": "Content-Length",
-              "value": "0"
-            },
-            {
-              "key": "Date",
-              "value": "Wed, 15 Dec 2021 12:12:31 GMT"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=60"
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive"
-            }
-          ],
-          "cookie": [],
-          "body": ""
-        }
-      ]
-    },
-    {
-      "name": "Find posts by author",
-      "request": {
-        "method": "GET",
-        "header": [],
-        "url": {
-          "raw": "localhost:8080/forum/posts/author/{{user}}",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "forum",
-            "posts",
-            "author",
-            "{{user}}"
-          ]
-        }
-      },
-      "response": [
-        {
-          "name": "Find posts by author",
-          "originalRequest": {
-            "method": "GET",
-            "header": [],
-            "url": {
-              "raw": "localhost:8080/forum/posts/author/{{user}}",
-              "host": [
-                "localhost"
-              ],
-              "port": "8080",
-              "path": [
-                "forum",
-                "posts",
-                "author",
-                "{{user}}"
-              ]
-            }
-          },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": "json",
-          "header": [
-            {
-              "key": "Content-Type",
-              "value": "application/json"
-            },
-            {
-              "key": "Transfer-Encoding",
-              "value": "chunked"
-            },
-            {
-              "key": "Date",
-              "value": "Wed, 15 Dec 2021 12:11:13 GMT"
-            },
-            {
-              "key": "Keep-Alive",
-              "value": "timeout=60"
-            },
-            {
-              "key": "Connection",
-              "value": "keep-alive"
-            }
-          ],
-          "cookie": [],
-          "body": "[\n    {\n        \"id\": \"61b9c48c041dde2dee7b98d3\",\n        \"title\": \"Jakarta EE\",\n        \"content\": \"Java is the best for backend\",\n        \"author\": \"JavaFan\",\n        \"dateCreated\": \"2021-12-15T12:33:48\",\n        \"tags\": [\n            \"Java\",\n            \"Jakarta EE\",\n            \"backend\",\n            \"J2EE\",\n            \"JEE\",\n            \"Spring\"\n        ],\n        \"likes\": 0,\n        \"comments\": []\n    }\n]"
-        }
-      ]
-    },
-    {
-      "name": "Add comment",
+      "name": "Update post",
       "request": {
         "method": "PUT",
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n\t\"message\": \"Awesome!!!\"\n}",
+          "raw": "{\n\t\"title\": \"Jakarta EE\",\n    \"tags\":[\"Jakarta EE\", \"J2EE\",\"Node.js\"],\n    \"content\": \"Java is the best for backend\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -307,29 +731,26 @@
           }
         },
         "url": {
-          "raw": "localhost:8080/forum/post/{{postId}}/comment/{{user}}",
+          "raw": "{{URL}}/forum/post/{{postId}}",
           "host": [
-            "localhost"
+            "{{URL}}"
           ],
-          "port": "8080",
           "path": [
             "forum",
             "post",
-            "{{postId}}",
-            "comment",
-            "{{user}}"
+            "{{postId}}"
           ]
         }
       },
       "response": [
         {
-          "name": "Add comment",
+          "name": "Update post",
           "originalRequest": {
             "method": "PUT",
             "header": [],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"message\": \"Awesome!!!\"\n}",
+              "raw": "{\n\t\"title\": \"Jakarta EE\",\n    \"tags\":[\"Jakarta EE\", \"J2EE\"],\n    \"content\": \"Java is the best for backend\"\n}",
               "options": {
                 "raw": {
                   "language": "json"
@@ -337,7 +758,7 @@
               }
             },
             "url": {
-              "raw": "localhost:8080/forum/post/{{postId}}/comment/{{user}}",
+              "raw": "localhost:8080/forum/post/{{postId}}",
               "host": [
                 "localhost"
               ],
@@ -345,9 +766,7 @@
               "path": [
                 "forum",
                 "post",
-                "{{postId}}",
-                "comment",
-                "{{user}}"
+                "{{postId}}"
               ]
             }
           },
@@ -365,7 +784,7 @@
             },
             {
               "key": "Date",
-              "value": "Wed, 15 Dec 2021 12:11:56 GMT"
+              "value": "Wed, 15 Dec 2021 10:36:42 GMT"
             },
             {
               "key": "Keep-Alive",
@@ -377,7 +796,7 @@
             }
           ],
           "cookie": [],
-          "body": "{\n    \"id\": \"61b9c48c041dde2dee7b98d3\",\n    \"title\": \"Jakarta EE\",\n    \"content\": \"Java is the best for backend\",\n    \"author\": \"JavaFan\",\n    \"dateCreated\": \"2021-12-15T12:33:48\",\n    \"tags\": [\n        \"Java\",\n        \"Jakarta EE\",\n        \"backend\",\n        \"J2EE\",\n        \"JEE\",\n        \"Spring\"\n    ],\n    \"likes\": 0,\n    \"comments\": [\n        {\n            \"user\": \"Stranger\",\n            \"message\": \"Awesome!!!\",\n            \"dateCreated\": \"2021-12-15T14:11:55\",\n            \"likes\": 0\n        }\n    ]\n}"
+          "body": "{\n    \"id\": \"61b9c48c041dde2dee7b98d3\",\n    \"title\": \"Jakarta EE\",\n    \"content\": \"Java is the best for backend\",\n    \"author\": \"JavaFan\",\n    \"dateCreated\": \"2021-12-15T12:33:48\",\n    \"tags\": [\n        \"Java\",\n        \"Jakarta EE\",\n        \"backend\",\n        \"J2EE\",\n        \"JEE\",\n        \"Spring\"\n    ],\n    \"likes\": 0,\n    \"comments\": []\n}"
         }
       ]
     },
@@ -495,6 +914,162 @@
       ]
     },
     {
+      "name": "Find posts by author",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{URL}}/forum/posts/author/{{user}}",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "forum",
+            "posts",
+            "author",
+            "{{user}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Find posts by author",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8080/forum/posts/author/{{user}}",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "posts",
+                "author",
+                "{{user}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 12:11:13 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": \"61b9c48c041dde2dee7b98d3\",\n        \"title\": \"Jakarta EE\",\n        \"content\": \"Java is the best for backend\",\n        \"author\": \"JavaFan\",\n        \"dateCreated\": \"2021-12-15T12:33:48\",\n        \"tags\": [\n            \"Java\",\n            \"Jakarta EE\",\n            \"backend\",\n            \"J2EE\",\n            \"JEE\",\n            \"Spring\"\n        ],\n        \"likes\": 0,\n        \"comments\": []\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Add comment",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"message\": \"Hmmmm....\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{URL}}/forum/post/{{postId}}/comment/{{user}}",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "forum",
+            "post",
+            "{{postId}}",
+            "comment",
+            "{{user}}"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "Add comment",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"message\": \"Awesome!!!\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:8080/forum/post/{{postId}}/comment/{{user}}",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "forum",
+                "post",
+                "{{postId}}",
+                "comment",
+                "{{user}}"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": "json",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 15 Dec 2021 12:11:56 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": \"61b9c48c041dde2dee7b98d3\",\n    \"title\": \"Jakarta EE\",\n    \"content\": \"Java is the best for backend\",\n    \"author\": \"JavaFan\",\n    \"dateCreated\": \"2021-12-15T12:33:48\",\n    \"tags\": [\n        \"Java\",\n        \"Jakarta EE\",\n        \"backend\",\n        \"J2EE\",\n        \"JEE\",\n        \"Spring\"\n    ],\n    \"likes\": 0,\n    \"comments\": [\n        {\n            \"user\": \"Stranger\",\n            \"message\": \"Awesome!!!\",\n            \"dateCreated\": \"2021-12-15T14:11:55\",\n            \"likes\": 0\n        }\n    ]\n}"
+        }
+      ]
+    },
+    {
       "name": "Find posts by tags",
       "request": {
         "method": "POST",
@@ -509,11 +1084,10 @@
           }
         },
         "url": {
-          "raw": "localhost:8080/forum/posts/tags",
+          "raw": "{{URL}}/forum/posts/tags",
           "host": [
-            "localhost"
+            "{{URL}}"
           ],
-          "port": "8080",
           "path": [
             "forum",
             "posts",
@@ -586,7 +1160,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\n    \"dateFrom\": \"2020-08-25\",\n    \"dateTo\": \"2020-08-26\"\n}",
+          "raw": "{\n    \"dateFrom\": \"2025-01-01\",\n    \"dateTo\": \"2025-01-10\"\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -594,11 +1168,10 @@
           }
         },
         "url": {
-          "raw": "localhost:8080/forum/posts/period",
+          "raw": "{{URL}}/forum/posts/period",
           "host": [
-            "localhost"
+            "{{URL}}"
           ],
-          "port": "8080",
           "path": [
             "forum",
             "posts",
@@ -665,49 +1238,31 @@
       ]
     },
     {
-      "name": "Update post",
+      "name": "Add like",
       "request": {
         "method": "PUT",
         "header": [],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n\t\"title\": \"Jakarta EE\",\n    \"tags\":[\"Jakarta EE\", \"J2EE\"],\n    \"content\": \"Java is the best for backend\"\n}",
-          "options": {
-            "raw": {
-              "language": "json"
-            }
-          }
-        },
         "url": {
-          "raw": "localhost:8080/forum/post/{{postId}}",
+          "raw": "{{URL}}/forum/post/{{postId}}/like",
           "host": [
-            "localhost"
+            "{{URL}}"
           ],
-          "port": "8080",
           "path": [
             "forum",
             "post",
-            "{{postId}}"
+            "{{postId}}",
+            "like"
           ]
         }
       },
       "response": [
         {
-          "name": "Update post",
+          "name": "Add like",
           "originalRequest": {
             "method": "PUT",
             "header": [],
-            "body": {
-              "mode": "raw",
-              "raw": "{\n\t\"title\": \"Jakarta EE\",\n    \"tags\":[\"Jakarta EE\", \"J2EE\"],\n    \"content\": \"Java is the best for backend\"\n}",
-              "options": {
-                "raw": {
-                  "language": "json"
-                }
-              }
-            },
             "url": {
-              "raw": "localhost:8080/forum/post/{{postId}}",
+              "raw": "localhost:8080/forum/post/{{postId}}/like",
               "host": [
                 "localhost"
               ],
@@ -715,25 +1270,22 @@
               "path": [
                 "forum",
                 "post",
-                "{{postId}}"
+                "{{postId}}",
+                "like"
               ]
             }
           },
-          "status": "OK",
-          "code": 200,
-          "_postman_previewlanguage": "json",
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": "plain",
           "header": [
             {
-              "key": "Content-Type",
-              "value": "application/json"
-            },
-            {
-              "key": "Transfer-Encoding",
-              "value": "chunked"
+              "key": "Content-Length",
+              "value": "0"
             },
             {
               "key": "Date",
-              "value": "Wed, 15 Dec 2021 10:36:42 GMT"
+              "value": "Wed, 15 Dec 2021 12:12:31 GMT"
             },
             {
               "key": "Keep-Alive",
@@ -745,7 +1297,7 @@
             }
           ],
           "cookie": [],
-          "body": "{\n    \"id\": \"61b9c48c041dde2dee7b98d3\",\n    \"title\": \"Jakarta EE\",\n    \"content\": \"Java is the best for backend\",\n    \"author\": \"JavaFan\",\n    \"dateCreated\": \"2021-12-15T12:33:48\",\n    \"tags\": [\n        \"Java\",\n        \"Jakarta EE\",\n        \"backend\",\n        \"J2EE\",\n        \"JEE\",\n        \"Spring\"\n    ],\n    \"likes\": 0,\n    \"comments\": []\n}"
+          "body": ""
         }
       ]
     }
@@ -758,6 +1310,21 @@
     {
       "key": "postId",
       "value": "61f07ac33ab027374829b481"
+    },
+    {
+      "key": "URL",
+      "value": "https://forumservice-vjzi.onrender.com",
+      "type": "default"
+    },
+    {
+      "key": "login",
+      "value": "",
+      "type": "default"
+    },
+    {
+      "key": "role",
+      "value": "Moderator",
+      "type": "default"
     }
   ]
 }

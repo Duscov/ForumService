@@ -34,7 +34,7 @@ public class SecurityConfiguration {
                 .requestMatchers(HttpMethod.DELETE, "/account/user/{login}")
                 .access(new WebExpressionAuthorizationManager(
                         "hasRole('ADMIN') or authentication.name == #login"))
-                .requestMatchers("/user/{login}/role/{role}")
+                .requestMatchers("/account/user/{login}/role/{role}")
                 .hasRole("ADMIN")
                 .requestMatchers(HttpMethod.PUT, "/account/user/{login}")
                 .access(new WebExpressionAuthorizationManager(
